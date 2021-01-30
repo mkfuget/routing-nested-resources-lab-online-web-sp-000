@@ -1,6 +1,5 @@
 class SongsController < ApplicationController
   def index
-    puts params
     if params[:artist_id].blank?
       @songs = Song.all
     else
@@ -15,7 +14,6 @@ class SongsController < ApplicationController
   end
 
   def show
-    puts params
     @song = Song.find_by(id: params[:id])
     @artist = Artist.find_by(id: params[:artist_id])
     if @song.blank?
