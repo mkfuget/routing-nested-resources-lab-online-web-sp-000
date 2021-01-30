@@ -19,7 +19,6 @@ class SongsController < ApplicationController
     @song = Song.find(params[:id])
     if !params[:artist_id].blank?
       @artist = Artist.find_by(id: params[:artist_id])
-      binding.pry
       if @artist.songs.find{|song| song == @song}
         puts "found"
         @songs = @artist.songs
