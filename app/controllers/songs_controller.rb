@@ -1,7 +1,6 @@
 class SongsController < ApplicationController
   def index
-    puts params
-    @artist = Artist.findfind_by(id: params[:artist_id])
+    @artist = Artist.find_by(id: params[:artist_id])
     if !@artist.blank?
       @songs = @artist.songs
     else
