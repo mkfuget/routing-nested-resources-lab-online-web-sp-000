@@ -14,6 +14,7 @@ class SongsController < ApplicationController
   end
 
   def show
+    puts param
     if params[:artist_id].blank?
       @songs = Song.all
     else
