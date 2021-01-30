@@ -21,9 +21,8 @@ class SongsController < ApplicationController
     if !params[:artist_id].blank?
 
       @artist = Artist.find_by(id: params[:artist_id])
-      @artist.songs.each{|x| puts x.id}
-
-      if @song.artist == @artist
+      @artist.songs.find{|song| song.id == params[:id]}
+      if @artist.songs.find{|song| song.id == params[:id]}t
         @songs = @artist.songs
       else
         flash[:alert] = "Song not found."
