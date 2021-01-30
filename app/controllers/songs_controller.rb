@@ -19,7 +19,7 @@ class SongsController < ApplicationController
       @songs = Song.all
     else
       @artist = Artist.find_by(id: params[:artist_id])
-      @song = Song.find(params[:id])
+      @song = Song.find_by(params[:id])
       if @song.artist = @artist
         @songs = @artist.songs
       else
