@@ -16,7 +16,7 @@ class SongsController < ApplicationController
 
   def show
     puts params
-    @song = Song.find(params[:id])
+    @song = Song.find_by(id: params[:id])
     if !params[:artist_id].blank?
       @artist = Artist.find_by(id: params[:artist_id])
       if @artist.songs.find{|song| song == @song}
