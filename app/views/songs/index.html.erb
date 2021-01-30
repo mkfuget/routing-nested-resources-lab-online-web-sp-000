@@ -1,6 +1,6 @@
 <ul>
 <% @songs.each do |song| %>
-  <li><%= link_to song.title, artist_song_path(song) %></li>
+  <li><%= ArtistsHelper.display_artist(song) %> - <%= link_to song.title, artist_songs_path(song) %></li>
 <% end %>
 </ul>
 <br>
