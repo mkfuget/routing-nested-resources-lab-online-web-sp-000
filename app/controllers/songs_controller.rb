@@ -16,7 +16,6 @@ class SongsController < ApplicationController
 
   def show
     puts params
-    flash[:alert] = "Song not found."
 
     if params[:artist_id].blank?
       @songs = Song.all
