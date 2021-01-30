@@ -23,13 +23,7 @@ class SongsController < ApplicationController
       redirect_to artist_songs_path(@artist)
     end
     if !params[:artist_id].blank?
-      if @artist.songs.find{|song| song == @song}
-        puts "found"
-        @songs = @artist.songs
-      else
-        puts "not found"
 
-      end
     end
 
 
