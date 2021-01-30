@@ -22,7 +22,7 @@ class SongsController < ApplicationController
     else
       @artist = Artist.find_by(id: params[:artist_id])
       @song = Song.find_by(params[:id])
-      if @song !=nil && @song.artist == @artist
+      if @song.artist == @artist
         @songs = @artist.songs
       else
         binding.pry
