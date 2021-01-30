@@ -18,9 +18,10 @@ class SongsController < ApplicationController
     puts params
     @song = Song.find_by(params[:id])
     if !params[:artist_id].blank?
-      binding.pry
 
       @artist = Artist.find_by(id: params[:artist_id])
+      binding.pry
+
       if @song.artist == @artist
         @songs = @artist.songs
       else
